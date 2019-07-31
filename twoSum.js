@@ -11,3 +11,15 @@ const twoSum = (arr, sum) => {
 };
 
 console.log(twoSum([1, 3, 4, 5, 6, 8, 10, 11, 13], 14));
+
+function twoNumberSum(array, targetSum) {
+  let comp = new Set();
+  array.forEach(num => {
+    if (comp.has(targetSum - num))
+      [num, targetSum - num].sort((a, b) => a - b);
+
+    comp.add(num);
+  });
+}
+
+console.log(twoNumberSum([3, 5, -4, 8, 11, 1, -1, 6], 10));
